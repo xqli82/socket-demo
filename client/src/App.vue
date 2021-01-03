@@ -66,10 +66,10 @@ export default {
   data() {
     return {
       title1: "电压/电流数据1",
-      title2: "电压/电流数据2",
-      title3: "电压/电流数据3",
-      title4: "电压/电流数据4",
-      title5: "电压/电流数据5",
+      title2: "数据展示2",
+      title3: "数据展示3",
+      title4: "数据展示4",
+      title5: "数据展示5",
       data1: {
         time: ["1", "2"],
         voltage: [380, 370],
