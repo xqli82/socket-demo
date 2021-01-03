@@ -18,15 +18,22 @@ const server = http.createServer(app)
 
 //websocket
 const io = Socket(server)
+const sockets=[]
 io.on('connect', socket => {
     console.log('socket conncet,id is:', socket.id)
-
+    sockets.push(socket)
 })
 io.on('disconnect', () => {
     console.log('disconnect')
 })
 setInterval(() => {
     io.emit('msg', iotInstance.Model)
+    console.log(sockets.map(item=>{
+        return {
+            id:item.id,
+            connect_status:item.connected
+        }
+    }))
 }, 2000);
 
 //http lisenter
