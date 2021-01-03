@@ -34,7 +34,7 @@ setInterval(() => {
             connect_status:item.connected
         }
     }))
-}, 2000);
+}, 1000);
 
 //http lisenter
 server.listen(3000, function () {

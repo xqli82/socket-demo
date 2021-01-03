@@ -9,12 +9,22 @@
           <div class="xpanel-wrapper xpanel-wrapper-40">
             <div class="xpanel xpanel-l-t">
               <div class="title">{{ title1 }}</div>
-              <div ref="panel1" id="panel1">panel1</div>
+              <div id="panel1" ref="panel1"></div>
             </div>
           </div>
           <div class="xpanel-wrapper xpanel-wrapper-60">
             <div class="xpanel xpanel-l-b">
               <div class="title">{{ title2 }}</div>
+              <div ref="panel2" id="panel2">
+                <p v-for="(item, index) in data2" :key="index" >
+                  <!-- {{item}} -->
+                  <span>{{new Date(item.voltage.update)}}</span>
+                  {{item.voltage.des}}:{{item.voltage.value}}
+                  {{item.current.des}}:{{item.current.value}}
+                  {{item.speed.des}}:{{item.speed.value}}
+                  <!-- {{item.voltage.des}}:{{item.voltage.value}} -->
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -65,6 +75,7 @@ export default {
         voltage: [380, 370],
         current: [100, 110],
       },
+      data2: [],
     };
   },
   created() {},
@@ -88,6 +99,12 @@ export default {
         this.data1.current.shift();
       }
       myChart1.setOption(opt1(this.data1));
+
+      this.data2.push(data)
+      if(this.data2.length>5){
+        this.data2.shift()
+      }
+      // console.log(this.data2)
     });
   },
 };
@@ -97,5 +114,18 @@ export default {
   width: 100%;
   height: 100%;
   // color:white;
+}
+#panel2 {
+  width: 100%;
+  height: 100%;
+  color:white
+}
+#panel2 p{
+  display: block;
+  border: solid 1px rgba($color: #00ffff, $alpha: 0.5);
+  margin: 0;
+}
+#panel2 p span{
+  display: block;
 }
 </style>
