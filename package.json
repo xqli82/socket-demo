@@ -1,0 +1,28 @@
+{
+  "name": "socket-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xqli82/socket-demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xqli82/socket-demo/issues"
+  },
+  "homepage": "https://github.com/xqli82/socket-demo#readme",
+  "dependencies": {
+    "@jiaminghi/data-view": "^2.10.0",
+    "express": "^4.17.1",
+    "jsmodbus": "^4.0.5",
+    "socket.io": "^3.0.4",
+    "vue": "^2.6.12"
+  }
+}
